@@ -197,19 +197,12 @@ function setLike(){
 	likebutton[2].addEventListener('click', () => {	B_scorelike(topScore[0]); })
 }
 
-
-
-
 function B_scorelike(likelove){
 	console.log(likelove["likelove"]);
 	likelove["likelove"] += 1 
 	writeLikeScore(likelove)
 	descscorelike(topScore)
 }
-
-
-
-
 
 async function writeLikeScore(userlike){
 

@@ -18,6 +18,11 @@ app.use(cookieParser());
  app.post('/register', async (req,res) => {
     return res.redirect('register.html');
   })
+
+  app.post('/playgame', async (req,res) => {
+    return res.redirect('game.html');
+  }) 
+
   
   app.post('/regisDB', async (req,res) => {
     let userData = await readJson('js/userDB.json');
