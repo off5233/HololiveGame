@@ -17,11 +17,10 @@ const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
 const words = [
-  'Fauna','Mumei','Baelz','Kronii','Sana','Gura','Cali','Ina','Kiara','Amelia','Irys'
+  'Fauna','Mumei','Baelz','Kronii','Sana','Gura','Cali','Ina','Kiara','Amelia','IRyS'
   ,'Korone','Okayu','Mio','Lofi','Risu','Moona','Anya','Ollie','Reine','Kaela','Kobo','Zeta','Azki','Suisei','Roboco'
   ,'Miko','Sora','Haato','Aki','Matsuri','Fubuki','Mel','Aqua','Shion','Ayame','Subaru','Choco','Marine','Flare','Noel','Rushia','Pekora','Kanata','Iuna'
   ,'Coco','Watame','Aloe','Nene','Polka','Botan','Lamy','Koyori','Iroha','La+','Laplus','Chloe','Lui'
-
 
 ];
 
@@ -38,10 +37,14 @@ function init() {
 // Start match
 function startMatch()
 {
-  if(wordInput.value === 'Start','start','START'){ Startgame = true; wordInput.value = '';  
+  if(wordInput.value === 'Start'){ Startgame = true; wordInput.value = '';  
   showWord(words); }
 
-  else if(wordInput.value === 'Restart','restart','RESTART'){ Startgame = true; wordInput.value = '';  
+  else if(wordInput.value === 'Restart'){ Startgame = false; wordInput.value = '';
+  time = 60;
+  score = 0;  
+  Startgame = true;
+  currentWord.innerHTML  = '';
   showWord(words); }
   
   if (matchWords()) {
@@ -79,7 +82,7 @@ function showWord(words) {
   else if(words[randIndex] === 'Kiara') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Takanashi_Kiara_Shadow.png';  hintword.innerHTML = "เจ้าของร้านKFP"; }
   else if(words[randIndex] === 'Amelia') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Watson_Amelia_Shadow.png';  hintword.innerHTML = "Ground Pound your Mom"; }
   
-  else if(words[randIndex] === 'Irys') { img.src = 'Hololive/Shadow_hololive/HOPE/IRyS_Shadow.png';  hintword.innerHTML = "Hope ความหวังสดท้าย(มั้งนะ)"; }
+  else if(words[randIndex] === 'IRyS') { img.src = 'Hololive/Shadow_hololive/HOPE/IRyS_Shadow.png';  hintword.innerHTML = "Hope ความหวังสดท้าย(มั้งนะ)"; }
 
   else if(words[randIndex] === 'Korone') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Inugami_Korone_Shadow.png';  hintword.innerHTML = "Yubi Yubi!!!"; }
   else if(words[randIndex] === 'Okayu') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Nekomata_Okayu_Shadow.png';  hintword.innerHTML = "Mogu Mogu"; }
@@ -145,7 +148,7 @@ function showWord(words) {
 
 
 function countdown() {
-  if (time > 0 && Startgame != false) {
+  if (time > 0 && Startgame == true) {
     time--;
   } else if (time === 0) {
     isPlaying = false;
@@ -168,7 +171,7 @@ function endgame(Wordrandom)
   else if(Wordrandom === 'Kiara') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Takanashi_Kiara_Portrait.png';}
   else if(Wordrandom === 'Amelia') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Watson_Amelia_Portrait.png';}
   
-  else if(Wordrandom === 'IRys') { img.src = 'Hololive/Shadow_hololive/HOPE/IRyS_Portrait.png';}
+  else if(Wordrandom === 'IRyS') { img.src = 'Hololive/Shadow_hololive/HOPE/IRyS_Portrait.png';}
 
   else if(Wordrandom === 'Korone') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Inugami_Korone_Portrait.png';}
   else if(Wordrandom === 'Okayu') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Nekomata_Okayu_Portrait.png';}
@@ -233,7 +236,7 @@ function endgame(Wordrandom)
 // Check game status
 function checkStatus() 
 {
-  if (!isPlaying && time === 0 &&  Startgame != false) 
+  if (!isPlaying && time === 0 &&  Startgame == true) 
   {   
     currentWord.innerHTML = Wordrandom; 
     Startgame = false
