@@ -3,22 +3,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Register</title>
-		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<link type="text/css" rel="stylesheet" href="css/regis.css">
 		<script type="text/javascript" src="js/register.js"></script>
 	</head>
 	<body>
+		<div id = "Heder">
+			<img id="LOGO" src="pic/Hololive_logo.svg.png" alt="error_logo">
+			<h1>HOLOSHADOW QUIZ</h1>
+		</div>
 		<div id=container>
 			<form class="form" action="/regisDB" method="post" accept-charset="utf-8">
 				<fieldset>
 					<legend> Register </legend>
-					Username:<input type="text" name="username" value="" placeholder="" required><br>
-					<!-- Email:<input type="text" name="email" value="" placeholder="" required><br> -->
-					Password: <input type="text" name="password" value="" placeholder=""><br>
-					Confirm Password: <input type="text" name="password" value="" placeholder=""><br>
+					<div id = "Regis_ter">
+						<h4>
+							Username<input type="text" name="username" value="" placeholder="" required><br>
+						<!-- Email:<input type="text" name="email" value="" placeholder="" required><br> -->
+							Password <input type="text" name="password" value="" placeholder=""><br>
+							Confirm Password <input type="text" name="password" value="" placeholder=""><br>
+						</h4>
+					</div>
 					<span id="errordisplay"></span><br>
-					<button id="registerButton">Register</button>
 					<!-- <input type="submit" name="submit" value="Register"> -->
 				</fieldset>
+				<button id="registerButton">Register</button>
 			</form>
 			
 		</div>

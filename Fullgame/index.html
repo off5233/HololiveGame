@@ -7,22 +7,34 @@
 		<script type="text/javascript" src="js/login.js"></script>
 	</head>
 	<body>
-		<div id=container>
-			<form class="form" action="/checkLogin" method="post" accept-charset="utf-8">
-				<fieldset>
-					<legend> Login </legend>
-					Username:<input type="text" name="username" value="" placeholder="" required><br>
-					Password: <input type="password" name="password" value="" placeholder="" required><br>
-					<span id="errordisplay"></span><br>
-					<input type="submit" value="Login">
-				</fieldset>
-			</form>
-			
-			<form class="form" action="/register" method="post" accept-charset="utf-8">
-				<input type="submit" value="Register">
+		<div id = "Heder">
+				<img id="LOGO" src="pic/Hololive_logo.svg.png" alt="error_logo">
+				<h1>HOLOSHADOW QUIZ</h1>
+		</div>
+		<div>
+			<div id=container>
+				<form class="form" action="/checkLogin" method="post" accept-charset="utf-8">
+					<fieldset>
+						<legend> Sign in </legend>
+						<div id = "Sign_in">
+							Username <input type="text" name="username" value="" placeholder="" required><br>
+							Password <input type="password" name="password" value="" placeholder="" required><br>
+						</div>
+						<span id="errordisplay"></span><br>
+						<div id="login">
+							<input type="submit" value="Login">
+						</div>
+					</fieldset>
+				</form>
 
-			</form>
-			
+				<form class="form" action="/register" method="post" accept-charset="utf-8">
+					<input type="submit" value="Register">
+	
+				</form>
+			</div>
+			<!-- <div id="Photo_BG">
+				<img src="pic/it_test.png" alt="error_BG">
+			</div> -->
 		</div>
 	
 	</body>
