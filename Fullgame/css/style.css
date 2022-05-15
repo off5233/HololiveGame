@@ -1,10 +1,13 @@
 html{
 	height: 100%;
 	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-#login{
 
-}
+
+
 #Username{
 
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,7 +56,7 @@ fieldset{
 }
 #container{
 	padding-top: 100px;
-	margin: auto;
+	
 }
 .form{
 	
