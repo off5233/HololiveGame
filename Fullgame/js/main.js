@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let time = 99999;
+let time = 60;
 let score = 0;
 let isPlaying;
 let img = document.getElementById('image');
@@ -15,15 +15,6 @@ const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
-
-
-const Logoutbutton =  document.getElementById('Logout');
-Commentbutton[0].addEventListener('click', () => { logout; })
-const mainbutton =  document.getElementById('mainbutton');
-Commentbutton[0].addEventListener('click', () => { mainbuttoncommant; })
-
-
-
 
 
 const words = [
@@ -47,13 +38,16 @@ function init() {
 // Start match
 function startMatch()
 {
-  if(wordInput.value === 'Start' && Startgame == false ){ Startgame = true; wordInput.value = '';  
+  if(wordInput.value === 'Start' && Startgame == false && time == 60 ){ 
+  Startgame = true; 
+  wordInput.value = '';  
   showWord(words); }
 
-  else if(wordInput.value === 'Restart' && Startgame == false && time == 0 ){ Startgame = false; wordInput.value = '';
+  else if(wordInput.value === 'Restart' && Startgame == false && time == 0 ){  
+  Startgame = true; 
+  wordInput.value = '';
   time = 60;
   score = 0;  
-  Startgame = true;
   currentWord.innerHTML  = '';
   showWord(words); }
   
@@ -167,7 +161,7 @@ function showWord(words) {
   else if(words[randIndex] === 'Koyori') { img.src = 'Hololive/Shadow_hololive/GEN6/Hakui_Koyori_Shadow.png';  hintword.innerHTML = "ผู้มีชั่วโมงไลฟ์ในหนึ่งวันเยอะมาก"; }
   else if(words[randIndex] === 'Iroha') { img.src = 'Hololive/Shadow_hololive/GEN6/Kazama_Iroha_Shadow.png';  hintword.innerHTML = "ไม่ใช่นินจา ซามูไร ต่างหาก!!!"; }
   else if(words[randIndex] === 'Laplus') { img.src = 'Hololive/Shadow_hololive/GEN6/La+_Darknesss_Shadow.png';  hintword.innerHTML = "YAMADA!!!"; }
-  else if(words[randIndex] === 'Chloe') { img.src = 'Hololive/Shadow_hololive/GEN6/Sakamata_Chole_Shadow.png';  hintword.innerHTML = "น้องวาฬสาย M"; }
+  else if(words[randIndex] === 'Chloe') { img.src = 'Hololive/Shadow_hololive/GEN6/Sakamata_Chloe_Shadow.png';  hintword.innerHTML = "น้องวาฬสาย M"; }
   else if(words[randIndex] === 'Lui') { img.src = 'Hololive/Shadow_hololive/GEN6/Takane_Lui_Shadow.png';  hintword.innerHTML = "คุณแม่ประจำรุ่น6"; }
 
   Wordrandom = words[randIndex];
@@ -256,7 +250,7 @@ function endgame(Wordrandom)
   else if(Wordrandom === 'Koyori') { img.src = 'Hololive/Shadow_hololive/GEN6/Hakui_Koyori_Portrait.png';}
   else if(Wordrandom === 'Iroha') { img.src = 'Hololive/Shadow_hololive/GEN6/Kazama_Iroha_Portrait.png';}
   else if(Wordrandom === 'La+') { img.src = 'Hololive/Shadow_hololive/GEN6/La+_Darknesss_Portrait.png';}
-  else if(Wordrandom === 'Chloe') { img.src = 'Hololive/Shadow_hololive/GEN6/Sakamata_Chole_Portrait.png';}
+  else if(Wordrandom === 'Chloe') { img.src = 'Hololive/Shadow_hololive/GEN6/Sakamata_Chloe_Portrait.png';}
   else if(Wordrandom === 'Lui') { img.src = 'Hololive/Shadow_hololive/GEN6/Takane_Lui_Portrait.png';}
 
 }

@@ -208,10 +208,6 @@ function showPost(data){
 	}
 }
 
-var Logoutbutton =  document.getElementById('Logout');
-Commentbutton[0].addEventListener('click', () => { getData(topScore[2]); })
-var mainbutton =  document.getElementById('mainbutton');
-Commentbutton[0].addEventListener('click', () => { getData(topScore[2]); })
 
 
 
