@@ -8,9 +8,7 @@ function checkCookie(){
 
 checkCookie();
 window.onload = pageLoad;
-
-
-
+//window.addEventListener('load', init);
 
 function getCookie(name){
 	var value = "";
