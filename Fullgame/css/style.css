@@ -34,9 +34,6 @@ h1{
 	margin-top: 20px;
 	background: url(Hololive_triangles_logo.png);
 }
-#login{
-
-}
 #Sign_in{
 
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -87,7 +84,7 @@ legend{
 	border-radius: 22px;
 }
 fieldset{
-	/* width: 650px; */
+	width: 250px;
 	height: 400px;
 	background: #B9FBFF;
 	mix-blend-mode: normal;
