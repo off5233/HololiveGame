@@ -1,14 +1,10 @@
-// check ว่ามีการ set cookies หรือยังถ้ามีจะไปยัง feed.html แต่ถ้าไม่มีจะกลับไปที่ login.html
 function checkCookie(){
 	var username = "";
-	if(getCookie("username")==false){
-		window.location = "login.html";
-	}
+	if(getCookie("username")==false){	window.location = "login.html";}
 }
 
 checkCookie();
 window.onload = pageLoad;
-//window.addEventListener('load', init);
 
 function getCookie(name){
 	var value = "";
@@ -31,11 +27,8 @@ function pageLoad(){
 }
 
 function getData(user){
-
 	var username = getCookie('username');
-	var msg = 
-	
-	"[ ถึง  "+ user["username"] + " || Score :  " + user["score"] + " ] : [ " + username + " : " + document.getElementById("textmsg").value +" ]";
+	var msg = "[ ถึง  "+ user["username"] + " || Score :  " + user["score"] + " ] : [ " + username + " : " + document.getElementById("textmsg").value +" ]";
 	document.getElementById("textmsg").value = "";
 	writePost(msg);
 }
@@ -48,12 +41,10 @@ function fileSubmit(){
 	document.getElementById('formId').submit();
 }
 
-
 let tablename = "userInfo";
 let tablename_msg = "msgInfo";
 let tablename_Scoreboard = "Scoreboard";
 
-// complete it
 async function readPost(){
 
 	let response = await fetch("/readPost");
@@ -61,7 +52,6 @@ async function readPost(){
 	let post = await showPost(JSON.parse(content));
 }
 
-// complete it
 async function writePost(msg){
 	var username = getCookie('username');
 	let response = await fetch("/writePost",{
@@ -81,7 +71,7 @@ async function writePost(msg){
 var rankid = [];
 var topScore = [];
 var likebutton = [] ;
-var commandbutton = [];
+var Commentbutton = [];
 
 async function readboard(){
 	let response = await fetch("/readboard");
@@ -90,7 +80,6 @@ async function readboard(){
 	let post = await showboard(JSON.parse(content));
 	let setdescscorelike = await descscorelike(topScore)
 }
-
 
 function descendingorder(userData){
 	var key = Object.keys(userData);
@@ -102,30 +91,19 @@ function descendingorder(userData){
 
     {
 		for(var i = 0; i < key.length; i++){
-			var userScore = userData[key[i]]
-			if(topScore[0] == null){
-				topScore[0] = userScore
-			}else{
-				var newTopScore = userScore
-				var topScoreLength = topScore.length
-	
-				for(var j = 0; j <= topScoreLength; j++){
-					if(j == topScoreLength){
-						topScore.push(newTopScore)
-					}
-	
-					if(newTopScore.score > topScore[j].score){
-						var oldScore = topScore[j]
-						topScore[j] = newTopScore
-						newTopScore = oldScore
-					}
-				}
-			}
-		}
-
-	}
+		var userScore = userData[key[i]]
+		if(topScore[0] == null){	topScore[0] = userScore	}
+			
+		else{
+		var newTopScore = userScore
+		var topScoreLength = topScore.length
+		for(var j = 0; j <= topScoreLength; j++){if(j == topScoreLength){topScore.push(newTopScore)	}
+        if(newTopScore.score > topScore[j].score)
+		{var oldScore = topScore[j]
+		topScore[j] = newTopScore
+		newTopScore = oldScore
+	}}}}}
 }
-
 
 function descscorelike(topScore){
 
@@ -135,7 +113,6 @@ function descscorelike(topScore){
 	}
 
 }
-
 
 function showboard(data){
 	var keys = Object.keys(data);
@@ -162,29 +139,28 @@ function showboard(data){
 		buttonlike.innerHTML =  "Like";
 		temp.appendChild(buttonlike);
 
-		var buttonCommand= document.createElement('button');
-		buttonCommand.id = "buttonCommand"+max;
-		buttonCommand.className = "postuser";
-		buttonCommand.innerHTML =  "Command";
-		temp.appendChild(buttonCommand);
+		var buttonComment = document.createElement('button');
+		buttonComment.id = "buttonComment"+max;
+		buttonComment.className = "postuser";
+		buttonComment.innerHTML =  "Comment";
+		temp.appendChild(buttonComment);
 
 	}
 	setLike();
-	setcommand();
+	setComment();
 }
 
-
-function setcommand(){
+function setComment(){
 	
 
-	commandbutton[0] =  document.getElementById('buttonCommand0');
-    commandbutton[0].addEventListener('click', () => { getData(topScore[2]); })
-	commandbutton[1] =  document.getElementById('buttonCommand1');
-	commandbutton[1].addEventListener('click', () => {	getData(topScore[1]); })
-	commandbutton[2] =  document.getElementById('buttonCommand2');
-	commandbutton[2].addEventListener('click', () => {	getData(topScore[0]); })
+	Commentbutton[0] =  document.getElementById('buttonComment0');
+    Commentbutton[0].addEventListener('click', () => { getData(topScore[2]); })
+	Commentbutton[1] =  document.getElementById('buttonComment1');
+	Commentbutton[1].addEventListener('click', () => {	getData(topScore[1]); })
+	Commentbutton[2] =  document.getElementById('buttonComment2');
+	Commentbutton[2].addEventListener('click', () => {	getData(topScore[0]); })
 
-	console.log(commandbutton);
+	console.log(Commentbutton);
 }
 
 function setLike(){
@@ -223,17 +199,19 @@ function showPost(data){
 	var divTag = document.getElementById("feed-container2");
 	divTag.innerHTML = "";
 	for (var i = keys.length-1 , max = 1 ; i >=0 && max < 5 ; i-- ,max++) {
-
 		var temp = document.createElement("div");
 		temp.className = "newsfeed";
 		divTag.appendChild(temp);
-
 		var temp1 = document.createElement("div");
 		temp1.innerHTML = data[keys[i]]["message"];
 		temp.appendChild(temp1);
 	}
 }
 
+var Logoutbutton =  document.getElementById('Logout');
+Commentbutton[0].addEventListener('click', () => { getData(topScore[2]); })
+var mainbutton =  document.getElementById('mainbutton');
+Commentbutton[0].addEventListener('click', () => { getData(topScore[2]); })
 
 
 

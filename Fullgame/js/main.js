@@ -16,6 +16,16 @@ const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
+
+const Logoutbutton =  document.getElementById('Logout');
+Commentbutton[0].addEventListener('click', () => { logout; })
+const mainbutton =  document.getElementById('mainbutton');
+Commentbutton[0].addEventListener('click', () => { mainbuttoncommant; })
+
+
+
+
+
 const words = [
   'Fauna','Mumei','Baelz','Kronii','Sana','Gura','Cali','Ina','Kiara','Amelia','IRyS'
   ,'Korone','Okayu','Mio','Lofi','Risu','Moona','Anya','Ollie','Reine','Kaela','Kobo','Zeta','Azki','Suisei','Roboco'

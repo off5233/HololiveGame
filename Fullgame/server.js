@@ -19,10 +19,6 @@ app.use(cookieParser());
     return res.redirect('register.html');
   })
 
-  app.post('/playgame', async (req,res) => {
-    return res.redirect('game.html');
-  }) 
-
   
   app.post('/regisDB', async (req,res) => {
     let userData = await readJson('js/userDB.json');
@@ -61,7 +57,15 @@ app.use(cookieParser());
     return res.redirect('index.html');
   })
   
+  app.get('/playgame', (req,res) => {
+    return res.redirect('game.html');
+  })
   
+  app.get('/feed', (req,res) => {
+    return res.redirect('feed.html');
+  })
+
+
   app.post('/checkLogin',async (req,res) => {
 
     let userData = await readJson('js/userDB.json');
