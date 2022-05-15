@@ -38,9 +38,12 @@ function init() {
 // Start match
 function startMatch()
 {
-  if(wordInput.value === 'Start'){ Startgame = true; wordInput.value = '';  
+  if(wordInput.value === 'Start','start','START'){ Startgame = true; wordInput.value = '';  
   showWord(words); }
 
+  else if(wordInput.value === 'Restart','restart','RESTART'){ Startgame = true; wordInput.value = '';  
+  showWord(words); }
+  
   if (matchWords()) {
     isPlaying = true;
     showWord(words);
@@ -78,31 +81,31 @@ function showWord(words) {
   
   else if(words[randIndex] === 'Irys') { img.src = 'Hololive/Shadow_hololive/HOPE/IRyS_Shadow.png';  hintword.innerHTML = "Hope ความหวังสดท้าย(มั้งนะ)"; }
 
-  else if(words[randIndex] === 'Korone') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Inugami_Korone_Shadow.png';  hintword.innerHTML = "ํYubi Yubi!!!"; }
-  else if(words[randIndex] === 'Okayu') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Nekomata_Okayu_Shadow.png';  hintword.innerHTML = "ํMogu Mogu"; }
-  else if(words[randIndex] === 'Mio') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Ookami_Mio_Shadow.png';  hintword.innerHTML = "ํคุณแม่ประจำHololive"; }
+  else if(words[randIndex] === 'Korone') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Inugami_Korone_Shadow.png';  hintword.innerHTML = "Yubi Yubi!!!"; }
+  else if(words[randIndex] === 'Okayu') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Nekomata_Okayu_Shadow.png';  hintword.innerHTML = "Mogu Mogu"; }
+  else if(words[randIndex] === 'Mio') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Ookami_Mio_Shadow.png';  hintword.innerHTML = "คุณแม่ประจำHololive"; }
 
   else if(words[randIndex] === ':Lofi') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Airani_lofifteen_Shadow.png';  hintword.innerHTML = "ํmeme Girl"; }
-  else if(words[randIndex] === 'Risu') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Ayunda_Risu_Shadow.png';  hintword.innerHTML = "ํน้องกระรอก"; }
-  else if(words[randIndex] === 'Moona') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Moona_Hoshinova_Shadow.png';  hintword.innerHTML = "ํดวงจันทร์ผู้มีความสามารถท่วมท้น"; }
+  else if(words[randIndex] === 'Risu') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Ayunda_Risu_Shadow.png';  hintword.innerHTML = "น้องกระรอก"; }
+  else if(words[randIndex] === 'Moona') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Moona_Hoshinova_Shadow.png';  hintword.innerHTML = "ดวงจันทร์ผู้มีความสามารถท่วมท้น"; }
 
-  else if(words[randIndex] === 'Anya') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Anya_Melifissa_Shadow.png';  hintword.innerHTML = "ํสาวน้อยอาวุธโบราณ"; }
-  else if(words[randIndex] === 'Ollie') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Kureiji_Ollie_Shadow.png';  hintword.innerHTML = "ํซอมบี้ผู้ติดApexหนัก"; }
-  else if(words[randIndex] === 'Reine') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Pavolia_Reine_Shadow.png';  hintword.innerHTML = "ํพี่สาวประจำรุ่นIDรุ่น2"; }
+  else if(words[randIndex] === 'Anya') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Anya_Melifissa_Shadow.png';  hintword.innerHTML = "สาวน้อยอาวุธโบราณ"; }
+  else if(words[randIndex] === 'Ollie') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Kureiji_Ollie_Shadow.png';  hintword.innerHTML = "ซอมบี้ผู้ติดApexหนัก"; }
+  else if(words[randIndex] === 'Reine') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Pavolia_Reine_Shadow.png';  hintword.innerHTML = "พี่สาวประจำรุ่นIDรุ่น2"; }
 
-  else if(words[randIndex] === 'Kaela') { img.src = 'Hololive/Shadow_hololive/GEN ID3/Kaela_Kovalskia_Shadow.png';  hintword.innerHTML = "ํเพนกวิ้นผู้ติดlol wildrift หนัก"; }
-  else if(words[randIndex] === 'Kobo') { img.src = 'Hololive/Shadow_hololive/GEN ID3/Kobo_Kanaeru_Shadow.png';  hintword.innerHTML = "ํน้องคลื่นทะเล"; }
-  else if(words[randIndex] === 'Zeta') { img.src = 'Hololive/Shadow_hololive/GEN ID3/Vestia_Zeta_Shadow.png';  hintword.innerHTML = "ํหน่อแมว"; }
+  else if(words[randIndex] === 'Kaela') { img.src = 'Hololive/Shadow_hololive/GEN ID3/Kaela_Kovalskia_Shadow.png';  hintword.innerHTML = "เพนกวิ้นผู้ติดlol wildrift หนัก"; }
+  else if(words[randIndex] === 'Kobo') { img.src = 'Hololive/Shadow_hololive/GEN ID3/Kobo_Kanaeru_Shadow.png';  hintword.innerHTML = "น้องคลื่นทะเล"; }
+  else if(words[randIndex] === 'Zeta') { img.src = 'Hololive/Shadow_hololive/GEN ID3/Vestia_Zeta_Shadow.png';  hintword.innerHTML = "หน่อแมว"; }
 
   else if(words[randIndex] === 'Azki') { img.src = 'Hololive/Shadow_hololive/GEN0/AZKi_Shadow.png';  hintword.innerHTML = "The last seiso(น่าจะ)"; }
-  else if(words[randIndex] === 'Suisei') { img.src = 'Hololive/Shadow_hololive/GEN0/Hoshimachi_Suisei_Shadow.png';  hintword.innerHTML = "ํสาวผู้เปรียบดั่งดางหาง"; }
-  else if(words[randIndex] === 'Roboco') { img.src = 'Hololive/Shadow_hololive/GEN0/Roboco_Shadow.png';  hintword.innerHTML = "ํHellobo"; }
-  else if(words[randIndex] === 'Miko') { img.src = 'Hololive/Shadow_hololive/GEN0/Sakura_Miko_Shadow.png';  hintword.innerHTML = "ํElite English"; }
-  else if(words[randIndex] === 'Sora') { img.src = 'Hololive/Shadow_hololive/GEN0/Tokino_Sora_Shadow.png';  hintword.innerHTML = "ํผู้บุกเบิกยุคHololive"; }
+  else if(words[randIndex] === 'Suisei') { img.src = 'Hololive/Shadow_hololive/GEN0/Hoshimachi_Suisei_Shadow.png';  hintword.innerHTML = "สาวผู้เปรียบดั่งดางหาง"; }
+  else if(words[randIndex] === 'Roboco') { img.src = 'Hololive/Shadow_hololive/GEN0/Roboco_Shadow.png';  hintword.innerHTML = "Hellobo"; }
+  else if(words[randIndex] === 'Miko') { img.src = 'Hololive/Shadow_hololive/GEN0/Sakura_Miko_Shadow.png';  hintword.innerHTML = "Elite English"; }
+  else if(words[randIndex] === 'Sora') { img.src = 'Hololive/Shadow_hololive/GEN0/Tokino_Sora_Shadow.png';  hintword.innerHTML = "ผู้บุกเบิกยุคHololive"; }
 
   else if(words[randIndex] === 'Haato') { img.src = 'Hololive/Shadow_hololive/GEN1/Akai_Haato_Shadow.png';  hintword.innerHTML = "สาวน้อยผู้มี2ตัวตน"; }
   else if(words[randIndex] === 'Aki') { img.src = 'Hololive/Shadow_hololive/GEN1/Aki_Rosenthal_Shadow.png';  hintword.innerHTML = "สาวผู้มีท่าเต้นเป็นเอกลักษณ์"; }
-  else if(words[randIndex] === 'Matsuri') { img.src = 'Hololive/Shadow_hololive/GEN1/Natsurio_Matsuri_Shadow.png';  hintword.innerHTML = "ํGOD(เจ้าตัวบอกงี้)"; }
+  else if(words[randIndex] === 'Matsuri') { img.src = 'Hololive/Shadow_hololive/GEN1/Natsurio_Matsuri_Shadow.png';  hintword.innerHTML = "GOD(เจ้าตัวบอกงี้)"; }
   else if(words[randIndex] === 'Fubuki') { img.src = 'Hololive/Shadow_hololive/GEN1/Shirakami_Fubuki_Shadow.png';  hintword.innerHTML = "Friend"; }
   else if(words[randIndex] === 'Mel') { img.src = 'Hololive/Shadow_hololive/GEN1/Yozora_Mel_Shadow.png';  hintword.innerHTML = "น้องแวมไพร์ SEISO(น่าจะ)"; }
 
@@ -141,18 +144,13 @@ function showWord(words) {
 }
 
 
-// Countdown timer
 function countdown() {
-  // Make sure time is not run out
   if (time > 0 && Startgame != false) {
-    // Decrement
     time--;
   } else if (time === 0) {
-    // Game is over
     isPlaying = false;
     endgame(Wordrandom);
   }
-  // Show time
   timeDisplay.innerHTML = time;
 }
 
@@ -239,8 +237,8 @@ function checkStatus()
   {   
     currentWord.innerHTML = Wordrandom; 
     Startgame = false
-    console.log(score);
     savescoreword(score);
+
   }
 }
 
@@ -271,4 +269,44 @@ async function savescoreword(score){
 }
 
 
+async function readboard(){
+	let response = await fetch("/readboard");
+	let content = await response.json();
+	let rundescendingorder = await descendingorder(JSON.parse(content))
+	let post = await showboard(JSON.parse(content));
+	let setdescscorelike = await descscorelike(topScore)
+}
 
+function descendingorder(userData){
+	var key = Object.keys(userData);
+
+	if(topScore[0] != null)
+	{
+		topScore.splice(0, topScore.length);
+	}
+
+    {
+		for(var i = 0; i < key.length; i++){
+			var userScore = userData[key[i]]
+			if(topScore[0] == null){
+				topScore[0] = userScore
+			}else{
+				var newTopScore = userScore
+				var topScoreLength = topScore.length
+	
+				for(var j = 0; j <= topScoreLength; j++){
+					if(j == topScoreLength){
+						topScore.push(newTopScore)
+					}
+	
+					if(newTopScore.score > topScore[j].score){
+						var oldScore = topScore[j]
+						topScore[j] = newTopScore
+						newTopScore = oldScore
+					}
+				}
+			}
+		}
+
+	}
+}

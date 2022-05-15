@@ -91,20 +91,18 @@ async function readboard(){
 	let setdescscorelike = await descscorelike(topScore)
 }
 
-var noloop = true;
 
 function descendingorder(userData){
 	var key = Object.keys(userData);
 
-	if(noloop == true && topScore[0] != null)
+	if(topScore[0] != null)
 	{
-		topScore.splice(0, 3);
+		topScore.splice(0, topScore.length);
 	}
 
-	if(noloop == true && topScore[0] == null ){
+    {
 		for(var i = 0; i < key.length; i++){
 			var userScore = userData[key[i]]
-	
 			if(topScore[0] == null){
 				topScore[0] = userScore
 			}else{
@@ -125,8 +123,6 @@ function descendingorder(userData){
 			}
 		}
 
-	noloop = false;
-	console.log(topScore);
 	}
 }
 
