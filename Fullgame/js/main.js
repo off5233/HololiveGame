@@ -1,13 +1,18 @@
 window.addEventListener('load', init);
+window.onload = pageLoad;
 
-let time = 60;
+
+
+
+let time = 5;
 let score = 0;
 let isPlaying;
 let img = document.getElementById('image');
+let Playgame = document.getElementById('Playgame');
 let Wordrandom = 'word';
 let Startgame = false;
 
-// DOM Elements
+
 const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word');
 const hintword = document.querySelector('#hint');
@@ -25,20 +30,44 @@ const words = [
 
 ];
 
-// Initialize Game
+function pageLoad()
+  {
+    Playgame.addEventListener('click', () => { playgame(); })
+    wordInput.style.display="none";
+
+  }
+
+
+
 function init() {
 
   wordInput.addEventListener('input',startMatch);
   setInterval(countdown, 1000);
   setInterval(checkStatus, 50);
 
-
 }
+
+
+function playgame()
+{
+
+  Startgame = true; 
+  wordInput.value = '';
+  time = 5;
+  score = 0;  
+  currentWord.innerHTML  = '';
+  showWord(words); 
+  Playgame.innerHTML= "Restart";
+  Playgame.style.display="none";
+  wordInput.style.display="inline";
+}
+
+
 
 // Start match
 function startMatch()
 {
-  if(wordInput.value === 'Start' && Startgame == false && time == 60 ){ 
+  if(wordInput.value === 'Start' && Startgame == false && time == 5 ){ 
   Startgame = true; 
   wordInput.value = '';  
   showWord(words); }
@@ -174,6 +203,8 @@ function countdown() {
     time--;
   } else if (time === 0) {
     isPlaying = false;
+    Playgame.style.display="inline";
+    wordInput.style.display="none";
     endgame(Wordrandom);
   }
   timeDisplay.innerHTML = time;

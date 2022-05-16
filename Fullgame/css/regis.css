@@ -1,11 +1,14 @@
 
 html{
 	height: 100%;
-	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-image: url("Hololive/BackGround1.jpg");
+
 }
+
+
 h1{
 	/* position: absolute; */
 	width: 571px;
