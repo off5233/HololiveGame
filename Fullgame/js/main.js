@@ -32,7 +32,7 @@ const words = [
 
 function pageLoad()
   {
-    Playgame.addEventListener('click', () => { playgame();})
+    Playgame.addEventListener('click', () => { playgame(); })
     wordInput.style.display="none";
 
   }
@@ -55,7 +55,7 @@ function playgame()
   wordInput.value = '';
   time = 5;
   score = 0;  
- currentWord.innerHTML  = '';
+  currentWord.innerHTML  = '';
   showWord(words); 
   Playgame.innerHTML= "Restart";
   Playgame.style.display="none";
@@ -63,6 +63,8 @@ function playgame()
 }
 
 
+
+// Start match
 function startMatch()
 {
   if(wordInput.value === 'Start' && Startgame == false && time == 5 ){ 
