@@ -1,7 +1,64 @@
 html{
 	height: 100%;
 	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
+	/* display: flex; */
+}
+#Header_wep{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 75% auto;
+
+}
+
+#LOGOnNameWeb{
+	width: 220px;
+	display: grid;
+	grid-template-columns: 50% auto ;
+}
+#logout_n_feed{
+	width: 140px;
+	margin-top: 35px;
+	margin-left: 200px;
+	
+}
+#LOGO{
+	width: 63px;
+	height: 79px;
+	margin-left: 30px;
+	margin-top: 20px;
+	background: url(Hololive_triangles_logo.png);
+	
+}
+h1{
+	/* position: absolute; */
+	width: 571px;
+	height: 57px;
+	left: 480px;
+	top: 38px;
+
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 800;
+	font-size: 50px;
+	line-height: 61px;
 	display: flex;
+	align-items: flex-end;
+
+	color: #0081FF;
+}
+#button1{
+
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 35px;
+	
+	width: 200px;
+	display: grid;
+	grid-template-columns: 50% auto ;
+}
+a{
+	color: #ffffff;
 }
 #image{
     width: 530px;
@@ -15,6 +72,9 @@ html{
 
 input{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 30px;
 
     width: 330px;
 	height: 40px;
@@ -26,12 +86,70 @@ input{
 	border-radius: 15px;
 }
 #Header{
-    margin-top: 150px;
+	margin: auto;
+    margin-top: 50px;
     margin-left: 100px;
     width: 2000px;
 	display: grid;
 	grid-template-columns: 35% auto;
 }
-#Left_Side{
-    /* margin-right: 500px; */
+#Playgame{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 28px;
+	width: 100px;
+	height: 50px;
+	color: #ffffff;
+	background-color: #23C8FF;
+	border: 1px solid #000000;
+	box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+#Right_side{
+	margin-left: 50px;
+	margin-top: 25px;
+	box-sizing: border-box;
+	
+}
+#time_left{
+	box-sizing: border-box;
+	width: 348px;
+	height: 348px;
+	left: 882px;
+	top: 338px;
+	background: #ffffff;
+	border: 15px solid #5EDCEE;
+	border-radius: 50%;
+}
+#TT{
+	
+	margin-top: 80px;
+	text-align: center;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 36px;
+	color: #0081FF;
+}
+#time{
+
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 90px;
+	line-height: 109px;
+
+	color: #0081FF;
+}
+#SC{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 73px;
+	margin: auto;
+	margin-left: 100px;
+	color: #0081FF;
 }
