@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 
- app.post('/register', async (req,res) => {
+ app.get('/register', async (req,res) => {
     return res.redirect('register.html');
   })
 
