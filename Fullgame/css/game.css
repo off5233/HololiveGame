@@ -1,0 +1,29 @@
+html{
+	height: 100%;
+	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
+	display: flex;
+}
+img{
+    width: 530px;
+	height: 560px;
+}
+input{
+    width: 330px;
+	height: 40px;
+	left: 535px;
+	top: 297px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+}
+#Header{
+    margin-top: 150px;
+    margin-left: 100px;
+    width: 2000px;
+	display: grid;
+	grid-template-columns: 35% auto;
+}
+#Left_Side{
+    /* margin-right: 500px; */
+}
