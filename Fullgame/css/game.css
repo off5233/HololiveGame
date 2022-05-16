@@ -153,3 +153,28 @@ input{
 	margin-left: 100px;
 	color: #0081FF;
 }
+
+#hint{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 73px;
+	margin: auto;
+	margin-left: auto;
+	color: #0081FF;
+}
+#current-word{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 73px;
+	margin: auto;
+	margin-left: 120px;
+	color: #0081FF;
+}
+
+#Playgame{
+	margin-left: 120px;
+}

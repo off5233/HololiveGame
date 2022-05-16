@@ -34,6 +34,7 @@ function pageLoad()
   {
     Playgame.addEventListener('click', () => { playgame(); })
     wordInput.style.display="none";
+   //hintword.style.display="none";
 
   }
 
@@ -59,7 +60,8 @@ function playgame()
   showWord(words); 
   Playgame.innerHTML= "Restart";
   Playgame.style.display="none";
-  wordInput.style.display="inline";
+  wordInput.style.display="block";
+  hintword.style.display="block";
 }
 
 
@@ -203,8 +205,9 @@ function countdown() {
     time--;
   } else if (time === 0) {
     isPlaying = false;
-    Playgame.style.display="inline";
+    Playgame.style.display="block";
     wordInput.style.display="none";
+    hintword.style.display="none";
     endgame(Wordrandom);
   }
   timeDisplay.innerHTML = time;
