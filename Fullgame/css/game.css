@@ -3,11 +3,19 @@ html{
 	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
 	display: flex;
 }
-img{
+#image{
     width: 530px;
 	height: 560px;
 }
+#Rule{
+    width: 600px;
+    height: 500px;
+    margin: auto;
+}
+
 input{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
     width: 330px;
 	height: 40px;
 	left: 535px;
