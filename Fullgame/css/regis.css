@@ -4,8 +4,6 @@ html{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url("Hololive/BackGround1.jpg");
-
 }
 
 
@@ -35,7 +33,6 @@ h1{
 	width: 63px;
 	height: 79px;
 	margin-top: 20px;
-	background: url(Hololive_triangles_logo.png);
 }
 #Regis_ter{
 
