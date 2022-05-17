@@ -1,3 +1,70 @@
+#RankB { grid-area: RB;}
+#NameB { grid-area: NB; }
+#ScoreB { grid-area: SB; }
+#LikeB { grid-area: LB; }
+#LikePic { grid-area: LP; }
+#CommentPic { grid-area: CP; }
+
+#Rank {
+	display: grid;
+
+	grid-template-areas:
+		'RB NB SB LB LP CP';
+	grid-gap: 10px;
+	background-color: #ffffff;
+	/* padding-top: 30px; */
+	padding-left: 20px;
+	border-radius: 10px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400px;
+	font-size: 30px;
+	text-align: center;
+}
+/* #RankB { 
+	padding-left: 10px;
+} */
+#NameB { 
+	padding-left: 25px;
+}
+#ScoreB { 
+	padding-left: 10px;
+ }
+#LikeB { 
+	padding-left: 30px;
+ }
+#LikePic { 
+	padding-left: 10px;
+ }
+#CommentPic { 
+	padding-left: 10px;
+ }
+.RankNumClass{
+	padding-top: 20px;
+
+}
+.NameClass{
+	padding-top: 20px;
+}
+.ScoreClass{
+	padding-top: 20px;
+}
+.likeClass{
+	padding-top: 20px;
+}
+.AddlikeClass{
+	width: 45px;
+	height:	45px;
+	padding-top: 6px;
+}
+.CommentClass{
+	width: 40px;
+	height:	40px;
+	padding-top: 8px;
+}
+/* #likeScore{
+	padding-top: 20px;
+} */
 body{
 	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
 }
@@ -60,7 +127,7 @@ a{
 	line-height: 73px;
 	text-align: center;
 	padding-top: 20px;
-	color: #23C8FF;
+	color: #ffffff;
 }
 img{
 	width:100%;
@@ -69,7 +136,7 @@ img{
 .item3{
 	width: 100%;
 	display: grid;
-	grid-template-columns: 50% auto;
+	grid-template-columns: 65% auto;
 }
 #commentF{
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -81,6 +148,10 @@ img{
 #posting{
 	text-align: center;
 }
+#rule_set{
+	margin: auto;
+	align-items: center;
+}
 #textmsg{
 	width: 477px;
 	height: 202px;
@@ -89,6 +160,7 @@ img{
 	font-size: 30px;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: italic;
+	margin: auto;
 }
 #feed-container2{
 	border:4px solid rgb(255, 255, 255); ;
@@ -126,10 +198,10 @@ img{
 	display: none;
 }
 
-@media only screen and (max-width: 767px){
-	.grid-container {
-		grid-template-areas:
-		  'header'
-		  'menu' 'main';
-	}
+@media only screen and (max-width: 768px){
+	.grid-container221{
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-gap: 10px;
+    }
 }

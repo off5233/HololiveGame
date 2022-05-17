@@ -203,7 +203,7 @@ function showboard(data){
 		var temp1 = document.createElement("img");
 		temp1.src = ("Hololive/watalike.png");
 		
-		temp1.className = "likeClass";
+		temp1.className = "AddlikeClass";
 		temp.appendChild(temp1);
 
 
