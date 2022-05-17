@@ -8,58 +8,59 @@
 	</head>
 
 	<body>
-		<div id="Header_wep">
-			<div id="LOGOnNameWeb">
-				<img id="LOGO" src="Hololive/Hololive_logo.svg.png" alt="error_logo">
-				<h1 id="HoloBard">HOLOSHADOW QUIZ</h1>
-			</div>
-	
-			<div id="logout_n_play">
-				<div id="item2"> 
-					<a href="/logout"> Logout</a>
-					<a href="/playgame"> playgame</a>
+		<div class="grid-container221">
+			<div id="Header_wep">
+				<div id="LOGOnNameWeb">
+					<img id="LOGO" src="Hololive/Hololive_logo.svg.png" alt="error_logo">
+					<h1 id="HoloBard">HOLOSHADOW QUIZ</h1>
 				</div>
-			</div>
-		</div>
-		<div id ="Rule">
-			<img id ="rule_set" src="Hololive/Rule.jpg" alt="error_rule">
-		</div>
-
-		<div class="grid-container">
-
-			<div class="item1">
-						
-				<div id="browsePic">
-					<form action="/profilepic" method="post" id="formId" enctype="multipart/form-data">
-					<input type="file" id="fileField" name="avatar" value="fileToUpload" placeholder="" hidden>
-					</form>
-				</div>
-				<div id="Username_all">
-					<h2>Hello <span id="username"></span>, Welcome back!</h2>
-				</div>		
-			</div>
-			<div class="grid-Rank_Comment">
-				<div class="item3">
-					<div id="Rank">
-						<div id="feed-container"></div>
-						<div id="RankB">RANK</div>
-						<div id="NameB">NAME</div>
-						<div id="ScoreB">SCORE</div>
-						<div id="LikeB">LIKE</div>
-						<div id="LikePic"></div>
-						<div id="CommentPic"></div>
+		
+				<div id="logout_n_play">
+					<div id="item2"> 
+						<a href="/logout"> Logout</a>
+						<a href="/playgame"> playgame</a>
 					</div>
-					<div id="posting">
-						<div id="commentF">
-							COMMENT
-						</div> 
-						<textarea name="msg" id="textmsg" value="" placeholder="" rows="4" cols="50"></textarea>
-						<div id="feed-container2"></div>
-					</div>
-
-					<hr>
 				</div>
-			</div>	  
+			</div>
+			<div id ="Rule">
+				<img id ="rule_set" src="Hololive/Rule2.jpg" alt="error_rule">
+			</div>
+
+			<div class="grid-container">
+
+				<div class="item1">
+							
+					<div id="browsePic">
+						<form action="/profilepic" method="post" id="formId" enctype="multipart/form-data">
+						<input type="file" id="fileField" name="avatar" value="fileToUpload" placeholder="" hidden>
+						</form>
+					</div>
+					<div id="Username_all">
+						<h2>Hello <span id="username"></span>, Welcome back!</h2>
+					</div>		
+				</div>
+				<div class="grid-Rank_Comment">
+					<div class="item3">
+						<div id="Rank">
+							<div id="RankB"><h4>RANK</h4></div>
+							<div id="NameB"><h4>NAME</h4></div>
+							<div id="ScoreB"><h4>SCORE</h4></div>
+							<div id="LikeB"><h4>LIKE</h4></div>
+							<div id="LikePic"><h4>ADD LIKE</h4></div>
+							<div id="CommentPic"><h4>ADD COMMENT</h4></div>
+						</div>
+						<div id="posting">
+							<div id="commentF">
+								COMMENT
+							</div> 
+							<textarea name="msg" id="textmsg" value="" placeholder="" rows="4" cols="50"></textarea>
+							<div id="feed-container2"></div>
+						</div>
+
+						<hr>
+					</div>
+				</div>	  
+			</div>
 		</div>
 	
 	</body>
