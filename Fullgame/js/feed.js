@@ -59,7 +59,6 @@ async function writePost(msg){
 			message:msg})
 	});
 	readPost();
-	readboard();
 }
 
 var rankid = [];

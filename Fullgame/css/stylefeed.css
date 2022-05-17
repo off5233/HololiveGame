@@ -191,17 +191,7 @@ img{
     background-color: #FEBE9A;
     
 }
-.postuser {
-    
-}
+
 .hidden{
 	display: none;
-}
-
-@media only screen and (max-width: 768px){
-	.grid-container221{
-        display: grid;
-        grid-template-columns: 50% auto;
-        grid-gap: 10px;
-    }
 }
