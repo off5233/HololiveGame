@@ -4,7 +4,7 @@ window.onload = pageLoad;
 
 
 
-let time = 5;
+let time = 1;
 let score = 0;
 let isPlaying;
 let img = document.getElementById('image');
@@ -24,8 +24,8 @@ const seconds = document.querySelector('#seconds');
 
 const words = [
   'Fauna','Mumei','Baelz','Kronii','Sana','Gura','Cali','Ina','Kiara','Amelia','IRyS'
-  ,'Korone','Okayu','Mio','Lofi','Risu','Moona','Anya','Ollie','Reine','Kaela','Kobo','Zeta','Azki','Suisei','Roboco'
-  ,'Miko','Sora','Haato','Aki','Matsuri','Fubuki','Mel','Aqua','Shion','Ayame','Subaru','Choco','Marine','Flare','Noel','Rushia','Pekora','Kanata','Iuna'
+  ,'Korone','Okayu','Mio','Iofi','Risu','Moona','Anya','Ollie','Reine','Kaela','Kobo','Zeta','Azki','Suisei','Roboco'
+  ,'Miko','Sora','Haato','Aki','Matsuri','Fubuki','Mel','Aqua','Shion','Ayame','Subaru','Choco','Marine','Flare','Noel','Rushia','Pekora','Kanata','Luna'
   ,'Coco','Watame','Aloe','Nene','Polka','Botan','Lamy','Koyori','Iroha','Laplus','Chloe','Lui'
 
 ];
@@ -44,7 +44,7 @@ function init() {
 
   wordInput.addEventListener('input',startMatch);
   setInterval(countdown, 1000);
-  setInterval(checkStatus, 50);
+  setInterval(checkStatus, 1);
 
 }
 
@@ -54,7 +54,7 @@ function playgame()
 
   Startgame = true; 
   wordInput.value = '';
-  time = 5;
+  time = 1;
   score = 0;  
   currentWord.innerHTML  = '';
   showWord(words); 
@@ -69,19 +69,6 @@ function playgame()
 // Start match
 function startMatch()
 {
-  if(wordInput.value === 'Start' && Startgame == false && time == 5 ){ 
-  Startgame = true; 
-  wordInput.value = '';  
-  showWord(words); }
-
-  else if(wordInput.value === 'Restart' && Startgame == false && time == 0 ){  
-  Startgame = true; 
-  wordInput.value = '';
-  time = 60;
-  score = 0;  
-  currentWord.innerHTML  = '';
-  showWord(words); }
-  
   if (matchWords()) {
     isPlaying = true;
     showWord(words);
@@ -102,12 +89,12 @@ function matchWords() {
   
 }
 
+//
 
 function showWord(words) {
 
   const randIndex = Math.floor(Math.random() * words.length);
   console.log("randIndex :" + words[randIndex]);
-
 
   //0-4
   if(words[randIndex] === 'Fauna' ) { img.src = 'Hololive/Shadow_hololive/GEN EN Council/Ceres_Fauna_Shadow.png';  hintword.innerHTML = "พระแม่ธรณี"; }
@@ -132,7 +119,7 @@ function showWord(words) {
   else if(words[randIndex] === 'Mio') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Ookami_Mio_Shadow.png';  hintword.innerHTML = "คุณแม่ประจำHololive"; }
 
   //15-17
-  else if(words[randIndex] === ':Lofi') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Airani_lofifteen_Shadow.png';  hintword.innerHTML = "ํmeme Girl"; }
+  else if(words[randIndex] === 'Iofi') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Airani_Iofifteen_Shadow.png';  hintword.innerHTML = "meme Girl"; }
   else if(words[randIndex] === 'Risu') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Ayunda_Risu_Shadow.png';  hintword.innerHTML = "น้องกระรอก"; }
   else if(words[randIndex] === 'Moona') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Moona_Hoshinova_Shadow.png';  hintword.innerHTML = "ดวงจันทร์ผู้มีความสามารถท่วมท้น"; }
 
@@ -176,7 +163,7 @@ function showWord(words) {
 
   //44-48
   else if(words[randIndex] === 'Kanata') { img.src = 'Hololive/Shadow_hololive/GEN4/Amane_Kanata_Shadow.png';  hintword.innerHTML = "กอลิล่าพลังบีบ10ตัน"; }
-  else if(words[randIndex] === 'Iuna') { img.src = 'Hololive/Shadow_hololive/GEN4/Himemori_Luna_Shadow.png';  hintword.innerHTML = "คำพูดติดปาก Nanora"; }
+  else if(words[randIndex] === 'Luna') { img.src = 'Hololive/Shadow_hololive/GEN4/Himemori_Luna_Shadow.png';  hintword.innerHTML = "คำพูดติดปาก Nanora"; }
   else if(words[randIndex] === 'Coco') { img.src = 'Hololive/Shadow_hololive/GEN4/Kiryu_Coco_Shadow.png';  hintword.innerHTML = "Hi Mother F*cker"; }
   else if(words[randIndex] === 'Towa') { img.src = 'Hololive/Shadow_hololive/GEN4/Tokoyami_Towa_Shadow.png';  hintword.innerHTML = "TMT TMT!!!"; }
   else if(words[randIndex] === 'Watame') { img.src = 'Hololive/Shadow_hololive/GEN4/Tsunomaki_Watame_Shadow.png';  hintword.innerHTML = "อาหารฉุกเฉินประจำHololive"; }
@@ -222,7 +209,7 @@ function endgame(Wordrandom)
   else if(Wordrandom === 'Sana') { img.src = 'Hololive/Shadow_hololive/GEN EN Council/Tsukumo_Sana_Portrait.png';}
 
   else if(Wordrandom === 'Gura') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Gawr_Gura_Portrait.png';}
-  else if(Wordrandom === 'Calli') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Mori_Calliope_Portrait.png';}
+  else if(Wordrandom === 'Cali') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Mori_Calliope_Portrait.png';}
   else if(Wordrandom === 'Ina') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Ninomae_Ina_nis_Portrait.png';}
   else if(Wordrandom === 'Kiara') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Takanashi_Kiara_Portrait.png';}
   else if(Wordrandom === 'Amelia') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Watson_Amelia_Portrait.png';}
@@ -233,11 +220,11 @@ function endgame(Wordrandom)
   else if(Wordrandom === 'Okayu') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Nekomata_Okayu_Portrait.png';}
   else if(Wordrandom === 'Mio') { img.src = 'Hololive/Shadow_hololive/GEN GAMER/Ookami_Mio_Portrait.png';}
 
-  else if(Wordrandom === 'Lofifteen') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Airani_lofifteen_Portrait.png';}
+  else if(Wordrandom === 'Iofi') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Airani_Iofifteen_Portrait.png';}
   else if(Wordrandom === 'Risu') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Ayunda_Risu_Portrait.png';}
   else if(Wordrandom === 'Moona') { img.src = 'Hololive/Shadow_hololive/GEN ID1/Moona_Hoshinova_Portrait.png';}
 
-  else if(Wordrandom === 'Anya') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Anya_Melifissa_Portrait.png';}
+  else if(Wordrandom === 'Anya') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Anya_Melfissa_Portrait.png';}
   else if(Wordrandom === 'Ollie') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Kureiji_Ollie_Portrait.png';}
   else if(Wordrandom === 'Reine') { img.src = 'Hololive/Shadow_hololive/GEN ID2/Pavolia_Reine_Portrait.png';}
 
@@ -283,7 +270,7 @@ function endgame(Wordrandom)
 
   else if(Wordrandom === 'Koyori') { img.src = 'Hololive/Shadow_hololive/GEN6/Hakui_Koyori_Portrait.png';}
   else if(Wordrandom === 'Iroha') { img.src = 'Hololive/Shadow_hololive/GEN6/Kazama_Iroha_Portrait.png';}
-  else if(Wordrandom === 'La+') { img.src = 'Hololive/Shadow_hololive/GEN6/La+_Darknesss_Portrait.png';}
+  else if(Wordrandom === 'Laplus') { img.src = 'Hololive/Shadow_hololive/GEN6/La+_Darknesss_Portrait.png';}
   else if(Wordrandom === 'Chloe') { img.src = 'Hololive/Shadow_hololive/GEN6/Sakamata_Chloe_Portrait.png';}
   else if(Wordrandom === 'Lui') { img.src = 'Hololive/Shadow_hololive/GEN6/Takane_Lui_Portrait.png';}
 
