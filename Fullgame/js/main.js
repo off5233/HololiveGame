@@ -4,7 +4,7 @@ window.onload = pageLoad;
 
 
 
-let time = 1;
+let time = 60;
 let score = 0;
 let isPlaying;
 let img = document.getElementById('image');
@@ -54,7 +54,7 @@ function playgame()
 
   Startgame = true; 
   wordInput.value = '';
-  time = 1;
+  time = 60;
   score = 0;  
   currentWord.innerHTML  = '';
   showWord(words); 
