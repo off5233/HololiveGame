@@ -17,7 +17,6 @@ function getCookie(name){
 }
 
 function pageLoad(){
-	document.getElementById('fileField').onchange = fileSubmit;
 	var username = getCookie('username');
 	console.log(getCookie('username'));
 	document.getElementById("username").innerHTML = username;
@@ -33,13 +32,6 @@ function getData(user){
 	writePost(msg);
 }
 
-function fileUpload(){
-	document.getElementById('fileField').click();
-}
-
-function fileSubmit(){
-	document.getElementById('formId').submit();
-}
 
 let tablename = "userInfo";
 let tablename_msg = "msgInfo";
@@ -69,6 +61,10 @@ async function writePost(msg){
 }
 
 var rankid = [];
+var nameid = [];
+var scoreid = [];
+var likeid = [];
+
 var topScore = [];
 var likebutton = [] ;
 var Commentbutton = [];
@@ -107,70 +103,159 @@ function descendingorder(userData){
 
 function descscorelike(topScore){
 
-	for(var n = 0 , i = 2 ; n < 3; n++, i--){
+	for(var n = 0 , i = 4 ; n < 5; n++, i--){
 		var user = topScore[n]
-		rankid[i].innerHTML = "Rank : "+ (n+1) +" || " + user["username"] +" || Score :  " + user["score"] +" || Like : " + user["likelove"];
+
+		console.log("likeid :" + likeid);
+
+		rankid[i].innerHTML = "Rank : "+ (n+1);
+		nameid[i].innerHTML = user["username"];
+		scoreid[i].innerHTML = user["score"] ;
+		likeid[i].innerHTML =  user["likelove"]
+
+		console.log("likeid[i]  :" + likeid[i] );
+
 	}
 
 }
+
 
 function showboard(data){
 	var keys = Object.keys(data);
-	var divTag = document.getElementById("feed-container");
-	divTag.innerHTML = "";
-	for (var i = keys.length-1 , max = 2 ; i >=0  && max >= 0 ; i-- , max-- ) {
+
+	var divTag = document.getElementById("RankB");
+	for (var i = keys.length-1 , max = 4 ; i >=0  && max >= 0 ; i-- , max-- ) {
 
 		var temp = document.createElement("div");
-		temp.className = "newsfeed";
+		temp.className = "newfeed2";
 		divTag.appendChild(temp);
 
-		
 		var temp1 = document.createElement("div");
-		temp1.id = "rank"+max;
-		temp1.className = "postmsg";
-		temp1.innerHTML = "";
+		temp1.id = "RankNum"+max;
+		temp1.className = "RankNumClass";
+		temp1.innerHTML = "RankNumClass"+max;
 		temp.appendChild(temp1);
 
-		rankid[max] = document.getElementById("rank"+max);
+		rankid[max] = document.getElementById("RankNum"+max);
 
-		var buttonlike = document.createElement('button');
-		buttonlike.id = "buttonlikelove"+max;
-		buttonlike.className = "postuser";
-		buttonlike.innerHTML =  "Like";
-		temp.appendChild(buttonlike);
-
-		var buttonComment = document.createElement('button');
-		buttonComment.id = "buttonComment"+max;
-		buttonComment.className = "postuser";
-		buttonComment.innerHTML =  "Comment";
-		temp.appendChild(buttonComment);
 
 	}
+
+	var divTag = document.getElementById("NameB");
+	for (var i = keys.length-1 , max = 4 ; i >=0  && max >= 0 ; i-- , max-- ) {
+
+		var temp = document.createElement("div");
+		temp.className = "newsfeed2";
+		divTag.appendChild(temp);
+
+		var temp1 = document.createElement("div");
+		temp1.id = "NameNum"+max;
+		temp1.className = "NameClass";
+		temp1.innerHTML = "NameNum"+max;
+		temp.appendChild(temp1);
+
+		nameid[max] = document.getElementById("NameNum"+max);
+
+	}
+
+	var divTag = document.getElementById("ScoreB");
+	for (var i = keys.length-1 , max = 4 ; i >=0  && max >= 0 ; i-- , max-- ) {
+
+		var temp = document.createElement("div");
+		temp.className = "newsfeed2";
+		divTag.appendChild(temp);
+
+		var temp1 = document.createElement("div");
+		temp1.id = "NumScore"+max;
+		temp1.className = "ScoreClass";
+		temp1.innerHTML = "ScoreB"+max;
+		temp.appendChild(temp1);
+
+		scoreid[max] = document.getElementById("NumScore"+max);
+
+	}
+
+	var divTag = document.getElementById("LikeB");
+	for (var i = keys.length-1 , max = 4 ; i >=0  && max >= 0 ; i-- , max-- ) {
+
+		var temp = document.createElement("div");
+		temp.className = "newsfeed2";
+		divTag.appendChild(temp);
+
+		var temp1 = document.createElement("div");
+		temp1.id = "likescore"+max;
+		temp1.className = "likeClass";
+		temp1.innerHTML = "likeClass"+max;
+		temp.appendChild(temp1);
+
+		likeid[max] = document.getElementById("likescore"+max);
+
+	}
+
+
+	var divTag = document.getElementById("LikePic");
+	for (var i = keys.length-1 , max = 4 ; i >=0  && max >= 0 ; i-- , max-- ) {
+
+		var temp = document.createElement("div");
+		temp.id = "NumimgLike"+max;
+		temp.className = "newsfeed2";
+		divTag.appendChild(temp);
+
+		var temp1 = document.createElement("img");
+		temp1.src = ("Hololive/watalike.png");
+		
+		temp1.className = "likeClass";
+		temp.appendChild(temp1);
+
+
+	}
+
+	var divTag = document.getElementById("CommentPic");
+	for (var i = keys.length-1 , max = 4 ; i >=0  && max >= 0 ; i-- , max-- ) {
+
+		var temp = document.createElement("div");
+		temp.id = "NumimgCommentPic"+max;
+		temp.className = "newsfeed2";
+		divTag.appendChild(temp);
+
+		var temp1 = document.createElement("img");
+		temp1.src = ("Hololive/Hololive_logo.svg.png");
+		temp1.className = "CommentClass";
+		temp.appendChild(temp1);
+
+		
+	}
+
 	setLike();
 	setComment();
+
 }
+
+
+
+
 
 function setComment(){
 	
 
-	Commentbutton[0] =  document.getElementById('buttonComment0');
-    Commentbutton[0].addEventListener('click', () => { getData(topScore[2]); })
-	Commentbutton[1] =  document.getElementById('buttonComment1');
-	Commentbutton[1].addEventListener('click', () => {	getData(topScore[1]); })
-	Commentbutton[2] =  document.getElementById('buttonComment2');
-	Commentbutton[2].addEventListener('click', () => {	getData(topScore[0]); })
+	Commentbutton[0] =  document.getElementById('NumimgLike0');
+    Commentbutton[0].addEventListener('onclick', () => { getData(topScore[2]); })
+	Commentbutton[1] =  document.getElementById('NumimgLike1');
+	Commentbutton[1].addEventListener('onclick', () => {getData(topScore[1]); })
+	Commentbutton[2] =  document.getElementById('NumimgLike2');
+	Commentbutton[2].addEventListener('onclick', () => {getData(topScore[0]); })
 
 	console.log(Commentbutton);
 }
 
 function setLike(){
 	
-	likebutton[0] =  document.getElementById('buttonlikelove0');
-    likebutton[0].addEventListener('click', () => { B_scorelike(topScore[2]); })
-	likebutton[1] =  document.getElementById('buttonlikelove1');
-	likebutton[1].addEventListener('click', () => {	B_scorelike(topScore[1]); })
-	likebutton[2] =  document.getElementById('buttonlikelove2');
-	likebutton[2].addEventListener('click', () => {	B_scorelike(topScore[0]); })
+	likebutton[0] =  document.getElementById('NumimgCommentPic0');
+    likebutton[0].addEventListener('onclick', () => { B_scorelike(topScore[2]); })
+	likebutton[1] =  document.getElementById('NumimgCommentPic1');
+	likebutton[1].addEventListener('onclick', () => {B_scorelike(topScore[1]); })
+	likebutton[2] =  document.getElementById('NumimgCommentPic2');
+	likebutton[2].addEventListener('onclick', () => {B_scorelike(topScore[0]); })
 }
 
 function B_scorelike(likelove){
@@ -199,12 +284,16 @@ function showPost(data){
 	var divTag = document.getElementById("feed-container2");
 	divTag.innerHTML = "";
 	for (var i = keys.length-1 , max = 1 ; i >=0 && max < 5 ; i-- ,max++) {
+
+
 		var temp = document.createElement("div");
 		temp.className = "newsfeed";
 		divTag.appendChild(temp);
 		var temp1 = document.createElement("div");
 		temp1.innerHTML = data[keys[i]]["message"];
 		temp.appendChild(temp1);
+
+
 	}
 }
 
