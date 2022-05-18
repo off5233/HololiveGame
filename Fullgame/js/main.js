@@ -62,6 +62,7 @@ function playgame()
   Playgame.style.display="none";
   wordInput.style.display="block";
   hintword.style.display="block";
+  scoreDisplay.innerHTML = score;
 }
 
 

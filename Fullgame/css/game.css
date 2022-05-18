@@ -1,8 +1,11 @@
-html{
-	height: 100%;
+
+html, body {
+	/*min-height: auto;*/
+	/*min-width: auto;*/
 	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
-	/* display: flex; */
+
 }
+
 #Header_wep{
 	width: 100%;
 	display: grid;

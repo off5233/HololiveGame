@@ -299,14 +299,12 @@ function showPost(data){
 	divTag.innerHTML = "";
 	for (var i = keys.length-1 , max = 1 ; i >=0 && max < 5 ; i-- ,max++) {
 
-
 		var temp = document.createElement("div");
 		temp.className = "newsfeed";
 		divTag.appendChild(temp);
 		var temp1 = document.createElement("div");
 		temp1.innerHTML = data[keys[i]]["message"];
 		temp.appendChild(temp1);
-
 
 	}
 }
