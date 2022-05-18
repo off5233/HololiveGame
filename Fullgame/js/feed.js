@@ -107,7 +107,7 @@ function descscorelike(topScore){
 	for(var n = 0 , i = 4 ; n < 5; n++, i--){
 		var user = topScore[n]
 
-		rankid[i].innerHTML = "Rank : "+ (n+1);
+		rankid[i].innerHTML = (n+1);
 		nameid[i].innerHTML = user["username"];
 		scoreid[i].innerHTML = user["score"] ;
 		likeid[i].innerHTML =  user["likelove"]

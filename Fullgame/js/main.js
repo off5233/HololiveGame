@@ -108,7 +108,7 @@ function showWord(words) {
   else if(words[randIndex] === 'Cali') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Mori_Calliope_Shadow.png';  hintword.innerHTML = "Dad!!!"; }
   else if(words[randIndex] === 'Ina') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Ninomae_Ina_nis_Shadow.png';  hintword.innerHTML = "พระแม่แห่งเหล่าTakodachi"; }
   else if(words[randIndex] === 'Kiara') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Takanashi_Kiara_Shadow.png';  hintword.innerHTML = "เจ้าของร้านKFP"; }
-  else if(words[randIndex] === 'Amelia') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Watson_Amelia_Shadow.png';  hintword.innerHTML = "Ground Pound your Mom"; }
+  else if(words[randIndex] === 'Amelia') { img.src = 'Hololive/Shadow_hololive/GEN EN Myth/Watson_Amelia_Shadow.png';  hintword.innerHTML = "Ground Pound Mom"; }
   
   //11
   else if(words[randIndex] === 'IRyS') { img.src = 'Hololive/Shadow_hololive/HOPE/IRyS_Shadow.png';  hintword.innerHTML = "Hope ความหวังสดท้าย(มั้งนะ)"; }
@@ -149,7 +149,7 @@ function showWord(words) {
 
   //34-38
   else if(words[randIndex] === 'Aqua') { img.src = 'Hololive/Shadow_hololive/GEN2/Minato_Aqua_Shadow.png';  hintword.innerHTML = "หัวหอม"; }
-  else if(words[randIndex] === 'Shion') { img.src = 'Hololive/Shadow_hololive/GEN2/Murasaki_Shion_Shadow.png';  hintword.innerHTML = "NEEEE"; }
+  else if(words[randIndex] === 'Shion') { img.src = 'Hololive/Shadow_hololive/GEN2/Murasaki_Shion_Shadow.png';  hintword.innerHTML = "กระเทียม"; }
   else if(words[randIndex] === 'Ayame') { img.src = 'Hololive/Shadow_hololive/GEN2/Nakiri_Ayame_Shadow.png';  hintword.innerHTML = "Ojosan"; }
   else if(words[randIndex] === 'Subaru') { img.src = 'Hololive/Shadow_hololive/GEN2/Oozora_Subaru_Shadow.png';  hintword.innerHTML = "Shuba!!!"; }
   else if(words[randIndex] === 'Choco') { img.src = 'Hololive/Shadow_hololive/GEN2/Yuzuki_Choco_Shadow.png';  hintword.innerHTML = "ราชินีแห่งASMR"; }
@@ -164,7 +164,7 @@ function showWord(words) {
   //44-48
   else if(words[randIndex] === 'Kanata') { img.src = 'Hololive/Shadow_hololive/GEN4/Amane_Kanata_Shadow.png';  hintword.innerHTML = "กอลิล่าพลังบีบ10ตัน"; }
   else if(words[randIndex] === 'Luna') { img.src = 'Hololive/Shadow_hololive/GEN4/Himemori_Luna_Shadow.png';  hintword.innerHTML = "คำพูดติดปาก Nanora"; }
-  else if(words[randIndex] === 'Coco') { img.src = 'Hololive/Shadow_hololive/GEN4/Kiryu_Coco_Shadow.png';  hintword.innerHTML = "Hi Mother F*cker"; }
+  else if(words[randIndex] === 'Coco') { img.src = 'Hololive/Shadow_hololive/GEN4/Kiryu_Coco_Shadow.png';  hintword.innerHTML = "มาเฟียมังกร"; }
   else if(words[randIndex] === 'Towa') { img.src = 'Hololive/Shadow_hololive/GEN4/Tokoyami_Towa_Shadow.png';  hintword.innerHTML = "TMT TMT!!!"; }
   else if(words[randIndex] === 'Watame') { img.src = 'Hololive/Shadow_hololive/GEN4/Tsunomaki_Watame_Shadow.png';  hintword.innerHTML = "อาหารฉุกเฉินประจำHololive"; }
 

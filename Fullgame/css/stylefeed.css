@@ -1,3 +1,4 @@
+
 #RankB { grid-area: RB;}
 #NameB { grid-area: NB; }
 #ScoreB { grid-area: SB; }
@@ -7,12 +8,12 @@
 
 #Rank {
 	display: grid;
-
+	width: 90%;
+	margin: auto;
 	grid-template-areas:
 		'RB NB SB LB LP CP';
 	grid-gap: 10px;
 	background-color: #ffffff;
-	/* padding-top: 30px; */
 	padding-left: 20px;
 	border-radius: 10px;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -21,9 +22,6 @@
 	font-size: 30px;
 	text-align: center;
 }
-/* #RankB { 
-	padding-left: 10px;
-} */
 #NameB { 
 	padding-left: 25px;
 }
@@ -41,6 +39,7 @@
  }
 .RankNumClass{
 	padding-top: 20px;
+	font-size: 30px;
 
 }
 .NameClass{
@@ -62,9 +61,6 @@
 	height:	40px;
 	padding-top: 8px;
 }
-/* #likeScore{
-	padding-top: 20px;
-} */
 body{
 	background: linear-gradient(180deg, #23C8FF 0%, #E0FAFF 100%);
 }
@@ -84,8 +80,8 @@ body{
 	line-height: 73px;
 	text-align: center;
 	margin: auto;
-	padding-left: 90px;
 	color: #ffffff;
+	width: 300px;
 }
 #HoloBard{
 	width: 571px;
@@ -114,9 +110,9 @@ a{
 	padding-left: 20px;
 }
 #logout_n_play{
-	width: 100;
+	width: 80%;
 	margin-top: 35px;
-	margin-left: 100px;
+	padding-left: 100px;
 	
 }
 #Username_all{
@@ -194,4 +190,44 @@ img{
 
 .hidden{
 	display: none;
+}
+@media only screen and (max-width: 768px){
+    .grid-container221{
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+	#Header_wep{
+		grid-column: 1;
+		grid-template-columns: unset;
+		
+	}
+	#logout_n_play{
+		padding-left: 0%;
+	}
+	#Rule{
+		grid-column: 1;
+	}
+	.item1{
+		grid-column: 1;
+	}
+	.item3{
+		grid-template-columns: unset;
+	}
+
+	#NameB { 
+		padding-left: 0%;
+	}
+	#ScoreB { 
+		padding-left: 0%;
+	 }
+	#LikeB { 
+		padding-left: 0%;
+	 }
+	#LikePic { 
+		padding-left: 0%;
+	 }
+	#CommentPic { 
+		padding-left: 0%;
+	 
 }
