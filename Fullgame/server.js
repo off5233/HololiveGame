@@ -231,6 +231,18 @@ app.get('/readPost', async (req,res) => {
 
 })
 
+app.get('/readWORD', async (req,res) => {
+  
+  let msg_read = `SELECT word,imgshadow,imgend,hint FROM gameInfo`;
+  let result = await queryDB(msg_read);
+  result = Object.assign({},result);
+  var Json = JSON.stringify(result);
+  res.json(Json);
+
+})
+
+
+
 app.post('/writePost',async (req,res) => {
 
   const newMsg = req.body;
