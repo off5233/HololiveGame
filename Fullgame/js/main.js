@@ -2,7 +2,7 @@ window.addEventListener('load', init);
 window.onload = pageLoad;
 
 
-let time = 5;
+let time = 60;
 let score = 0;
 let isPlaying;
 let img = document.getElementById('image');
@@ -74,7 +74,7 @@ function playgame()
 
   Startgame = true; 
   wordInput.value = '';
-  time = 5;
+  time = 60;
   score = 0;  
   currentWord.innerHTML  = '';
   Playgame.innerHTML= "Restart";
@@ -127,10 +127,10 @@ function Randomword(data){
   const randIndex = Math.floor(Math.random()*keys.length);
   
 
-  img.src = `Hololive/Shadow_hololive/${data[keys[0]]["imgshadow"]}`;
-  hintword.innerHTML =  data[keys[0]]["hint"];
-  Wordrandom = data[keys[0]]["word"];
-  end = `Hololive/Shadow_hololive/${data[keys[0]]["imgend"]}`;
+  img.src = `Hololive/Shadow_hololive/${data[keys[randIndex]]["imgshadow"]}`;
+  hintword.innerHTML =  data[keys[randIndex]]["hint"];
+  Wordrandom = data[keys[randIndex]]["word"];
+  end = `Hololive/Shadow_hololive/${data[keys[randIndex]]["imgend"]}`;
 }
 
 
