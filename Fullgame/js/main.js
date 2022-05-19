@@ -34,11 +34,10 @@ function pageLoad()
   {
     Playgame.addEventListener('click', () => { playgame(); })
     wordInput.style.display="none";
-   //hintword.style.display="none";
-
+   
+    //hintword.style.display="none";
   //for(var i = 0; i < words.length ; i++){ GameArray(words[i]);}
   
-
   }
 
 

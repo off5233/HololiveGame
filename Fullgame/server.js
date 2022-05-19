@@ -58,25 +58,6 @@ app.get('/loadstoredatainuserid', async (req, res) => {
   return res.send(sedata);
 });
 
-// app.get('/loadstoredatainmsgid', async (req, res) => {
-
-//   let sql_storedata = "CREATE TABLE IF NOT EXISTS msgInfo (msg_id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), message VARCHAR(100))";
-//   let result_storedata = await queryDB(sql_storedata);
-//   result_storedata = await queryDB(sql_storedata);
-//   // sql_storedata = `SELECT item_name FROM ${tablename_storedata}`;
-//   let sedata = `SELECT  msg_Id FROM msgInfo`;
-//   sedata = await queryDB(sedata);
-
-//   if(sedata == ''){
-//       readjson().then(Updatestorepostdb).then((out) => out);
-      
-//   }
-//   console.log("Getcomplete")
-//   return res.send(sedata);
-// });
-
-
-
 
  app.get('/register', async (req,res) => {
     return res.redirect('register.html');
