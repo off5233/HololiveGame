@@ -2,8 +2,6 @@ window.addEventListener('load', init);
 window.onload = pageLoad;
 
 
-
-
 let time = 60;
 let score = 0;
 let isPlaying;

@@ -19,14 +19,30 @@ function getCookie(name){
 function pageLoad(){
 	var username = getCookie('username');
 	document.getElementById("username").innerHTML = username;
+
+
+	// Loaddatajs();
+
 	readPost();
 	readboard();
 
 }
 
+
+
+async function Loaddatajs(){
+
+	let response = await fetch("/loadstoredatainmsgid");
+	return true;
+}
+
+
+
 function getData(user){
 
 	console.log("getData");
+
+
 
 	var username = getCookie('username');
 	var msg = "[ ถึง  "+ user["username"] + " || Score :  " + user["score"] + " ] : [ " + username + " : " + document.getElementById("textmsg").value +" ]";
@@ -73,6 +89,7 @@ var Commentbutton = [];
 async function readboard(){
 	let response = await fetch("/readboard");
 	let content = await response.json();
+
 	let rundescendingorder = await descendingorder(JSON.parse(content))
 	let post = await showboard(JSON.parse(content));
 	let setdescscorelike = await descscorelike(collectscore)
@@ -90,7 +107,6 @@ function descendingorder(userData){
 		for(var i = 0; i < key.length; i++){
 		var userScore = userData[key[i]]
 		if(collectscore[0] == null){	collectscore[0] = userScore	}
-			
 		else{
 		var newcollectscore = userScore
 		var collectscoreLength = collectscore.length
@@ -108,7 +124,6 @@ function descscorelike(collectscore){
 		nameid[i].innerHTML = user["username"];
 		scoreid[i].innerHTML = user["score"] ;
 		likeid[i].innerHTML =  user["likelove"]
-
 
 	}
 
@@ -218,7 +233,6 @@ function showboard(data){
 		temp1.className = "CommentClass";
 		temp.appendChild(temp1);
 
-		
 	}
 
 	setLike();
@@ -228,44 +242,44 @@ function showboard(data){
 
 
 function setComment(){
-	NumimgCommentPic1
-	Commentbutton[0] =  document.getElementById('NumimgCommentPic4');
+
+	
+
+	for (var i = 0 , max = 4 ; i<5 ; i++,max-- )
+	
+	{
+		Commentbutton[i] =  document.getElementById('NumimgCommentPic'+max);
+
+	}
+
     Commentbutton[0].addEventListener('click', () => { getData(collectscore[0]); })
-
-	Commentbutton[1] =  document.getElementById('NumimgCommentPic3');
 	Commentbutton[1].addEventListener('click', () => {getData(collectscore[1]); })
-
-	Commentbutton[2] =  document.getElementById('NumimgCommentPic2');
     Commentbutton[2].addEventListener('click', () => { getData(collectscore[2]); })
-
-	Commentbutton[3] =  document.getElementById('NumimgCommentPic1');
 	Commentbutton[3].addEventListener('click', () => {getData(collectscore[3]); })
-
-	Commentbutton[4] =  document.getElementById('NumimgCommentPic0');
 	Commentbutton[4].addEventListener('click', () => {getData(collectscore[4]); })
 
 }
 
 function setLike(){
+
+	for (var i = 0, max = 4 ; i<5 ; i++,max-- )
 	
-	likebutton[0] =  document.getElementById('NumimgLike4');
+	{
+
+		likebutton[i] =  document.getElementById('NumimgLike'+max);
+
+	}
+
     likebutton[0].addEventListener('click', () => { B_scorelike(collectscore[0]); })
-
-	likebutton[1] =  document.getElementById('NumimgLike3');
 	likebutton[1].addEventListener('click', () => {B_scorelike(collectscore[1]); })
-
-	likebutton[2] =  document.getElementById('NumimgLike2');
     likebutton[2].addEventListener('click', () => { B_scorelike(collectscore[2]); })
-
-	likebutton[3] =  document.getElementById('NumimgLike1');
 	likebutton[3].addEventListener('click', () => {B_scorelike(collectscore[3]); })
-
-	likebutton[4] =  document.getElementById('NumimgLike0');
 	likebutton[4].addEventListener('click', () => {B_scorelike(collectscore[4]); })
+
 }
 
 function B_scorelike(likelove){
-	
+
 	likelove["likelove"] += 1 
 	writeLikeScore(likelove)
 	descscorelike(collectscore)
@@ -283,7 +297,9 @@ async function writeLikeScore(userlike){
 			user:userlike["username"],
 			like:userlike["likelove"]})
 		});
+		
 }
+
 
 function showPost(data){
 	var keys = Object.keys(data);
