@@ -34,10 +34,29 @@ function pageLoad()
     wordInput.style.display="none";
    //hintword.style.display="none";
 
+   for(var i = 0; i < words.length ; i++){ GameArray(words[i]);}
+  
+
+  }
+
+
+  async function GameArray(wordss){
+
+    let response = await fetch("/writeGameArray",{
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        words:wordss})
+    });
+
   }
 
 
 
+  
 function init() {
 
   wordInput.addEventListener('input',startMatch);

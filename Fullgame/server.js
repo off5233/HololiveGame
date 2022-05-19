@@ -147,8 +147,9 @@ app.get('/loadstoredatainuserid', async (req, res) => {
 
     let sql_loing = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY ,username VARCHAR(255),password VARCHAR(100),score Int,likelove Int)"
     sql_loing = await queryDB(sql_loing);
+
     
-    sql = `INSERT INTO userInfo (username, password,score,likelove) VALUES ("${req.body.username}", "${req.body.password}",'0','0')`;
+    sql = `INSERT INTO userInfo (username,password,score,likelove) VALUES ("${req.body.username}", "${req.body.password}",'0','0')`;
     result = await queryDB(sql);
     
     console.log("New record created successfullyone");
@@ -243,6 +244,25 @@ app.post('/writePost',async (req,res) => {
   res.json(result_msg);
   
 })
+
+
+app.post('/writeGameArray',async (req,res) => {
+
+  const newMsg = req.body;
+  //console.log("writeGameArray :"+newMsg);
+
+  var keys = Object.keys(newMsg);
+  
+  let sql_loing = "CREATE TABLE IF NOT EXISTS gameInfo (id INT AUTO_INCREMENT PRIMARY KEY ,word VARCHAR(100),imgshadow VARCHAR(100),imgend VARCHAR(100),hint VARCHAR(100)) "
+  sql_loing = await queryDB(sql_loing);
+
+  // sql_msg = `INSERT INTO gameInfo (word, imgshadow,imgend,hint) VALUES ("${newMsg.words}",'avatar.png','avatar.png',"${newMsg.words}")`;
+  // result_msg = await queryDB(sql_msg);
+  
+  res.json(result_msg);
+  
+})
+
 
 
 app.get('/readboard', async (req,res) => {
